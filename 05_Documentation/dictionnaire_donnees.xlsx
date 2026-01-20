@@ -1,0 +1,8 @@
+| **Table**    | **Colonne** | **Type**     | **Source** | **Transformation** | **Commentaire**                     |
+| ------------ | ----------- | ------------ | ---------- | ------------------ | ----------------------------------- |
+| Dim_Candidat | candidat_id | INT          | —          | Séquence           | Clé primaire (PK), auto-incrémentée |
+| Dim_Candidat | full_name   | VARCHAR(200) | Full name  | Split              | Exemple : `"Nidalan LOUACHAMA"`     |
+| Dim_Candidat | prenom      | VARCHAR(100) | Full name  | tMap (substring)   | `"Nidalan"`                         |
+| Dim_Candidat | nom         | VARCHAR(100) | Full name  | tMap (substring)   | `"LOUACHAMA"`                       |
+| Dim_Candidat | ville       | VARCHAR(50)  | Location   | Regex              | `"Rabat"`                           |
+| Dim_Candidat | age         | INT          | Birthday   | Calcul             | `NULL` si non disponible            |
